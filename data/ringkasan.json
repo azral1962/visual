@@ -1,0 +1,22 @@
+{
+  "distribution": {
+    "n": 8,
+    "mean_A": 50.0,
+    "sd_A": 9.999999999999998,
+    "mean_B": 50.0,
+    "sd_B": 9.999999999999996
+  },
+  "paired": {
+    "n": 12,
+    "before_mean": 12.0,
+    "after_mean": 9.916666666666666,
+    "delta_mean": -2.0833333333333335,
+    "delta_sd": 1.2401124093721454,
+    "improved": 11,
+    "worsened": 1
+  },
+  "recovery": {
+    "baseline_first_recovered_minute": 48,
+    "adaptive_first_recovered_minute": 30
+  }
+}
