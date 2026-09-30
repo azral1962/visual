@@ -1,0 +1,10 @@
+digraph Bukti {
+  rankdir=TB;
+  node [shape=box, fontname="sans-serif"];
+  kebutuhan -> klaim [label="memotivasi"];
+  kebutuhan -> metode [label="diturunkan"];
+  klaim -> protokol [label="dioperasionalkan"];
+  metode -> bukti [label="direalisasikan"];
+  protokol -> bukti [label="menghasilkan"];
+  bukti -> klaim [label="mendukung atau membatasi", style=dashed];
+}
