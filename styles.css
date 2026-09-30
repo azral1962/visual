@@ -1,0 +1,12 @@
+body {font-family: 'DejaVu Sans', Arial, sans-serif; color:#183044; line-height:1.65; max-width:1100px; margin: auto; padding: 32px;}
+h1,h2,h3 {color:#0c4a6e; line-height:1.25;}
+table {border-collapse:collapse; width:100%; font-size:0.9em; margin:1.5em 0;}
+th,td {padding:9px 12px; border-bottom:1px solid #d5e2ea; text-align:left; vertical-align:top;}
+th {background:#edf5fa;}
+figure {margin:2em 0;}
+img {max-width:100%; height:auto;}
+figcaption,caption {font-size:0.9em; color:#334155; text-align:left;}
+pre {overflow:auto; background:#f3f6f8; padding:16px; font-size:0.85em;}
+a {color:#075985;}
+.callout-note {padding:16px; border-left:4px solid #0284c7; background:#f0f9ff;}
+@media (max-width:650px) {body{padding:16px;} table{display:block;overflow-x:auto;} th,td{min-width:100px;}}

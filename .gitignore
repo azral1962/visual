@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.quarto/
+_site/
+_freeze/
+.preview.md
+*.log
+*.aux
+*.out
+*.toc
+.DS_Store

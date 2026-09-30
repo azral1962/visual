@@ -1,0 +1,29 @@
+project:
+  type: default
+  render:
+    - paper.qmd
+lang: id
+bibliography: references.bib
+link-citations: true
+number-sections: true
+crossref:
+  fig-title: Gambar
+  tbl-title: Tabel
+  fig-prefix: Gambar
+  tbl-prefix: Tabel
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    embed-resources: true
+    code-fold: true
+    css: styles.css
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry: margin=25mm
+    colorlinks: true
+    fig-pos: H
+    keep-tex: true
