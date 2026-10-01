@@ -16,7 +16,15 @@ keywords:
   - TISE
   - Q-Cycle
   - Quarto
+
+format:
+  academic-typst:
+    section-numbering: "1.1.1"
 ---
+
+```{=typst}
+#show table.cell: set par(justify: false)
+```
 
 # Pendahuluan
 
@@ -26,7 +34,13 @@ Kepentingan visual memiliki dasar penelitian. Cleveland dan McGill menunjukkan m
 
 Weissgerber dan kolega, dalam telaah 703 artikel pada jurnal fisiologi, menunjukkan masalah penggunaan ringkasan untuk data kontinu: bentuk distribusi dan struktur berpasangan dapat tersembunyi oleh grafik rerata [@weissgerber2015]. Ruang lingkup penelitian tersebut perlu dipertahankan; persentase praktik pada jurnal fisiologi tidak otomatis mewakili seluruh publikasi akademik. Namun, masalah logisnya relevan secara luas: ringkasan yang benar secara numerik belum tentu cukup untuk menilai pola data.
 
-Artikel ini membahas tiga pertanyaan. **PP1:** informasi apa yang paling tepat disampaikan melalui teks, diagram, plot, gambar, atau tabel? **PP2:** bagaimana bahasa dan aturan representasi dapat dihubungkan dengan TISE serta Q-Cycle? **PP3:** bagaimana penulis menghasilkan representasi yang tertelusur dan dapat dibuat ulang? Jawabannya berupa sintesis konseptual, matriks desain, dan demonstrasi, bukan estimasi empiris bahwa menambahkan gambar pasti meningkatkan mutu publikasi.
+Artikel ini membahas tiga pertanyaan:
+
+- **PP1:** Informasi apa yang paling tepat disampaikan melalui teks, diagram, plot, gambar, atau tabel?
+- **PP2:** Bagaimana bahasa dan aturan representasi dapat dihubungkan dengan TISE serta Q-Cycle?
+- **PP3:** Bagaimana penulis menghasilkan representasi yang tertelusur dan dapat dibuat ulang?
+
+Jawabannya berupa sintesis konseptual, matriks desain, dan demonstrasi, bukan estimasi empiris bahwa menambahkan gambar pasti meningkatkan mutu publikasi.
 
 # Pendekatan dan batas kontribusi
 
@@ -35,7 +49,7 @@ Artikel menggunakan pembacaan terarah atas sumber primer terpilih mengenai perse
 Prosedur sintesis mencakup pemisahan fungsi representasi, pemetaan fungsi tersebut ke Q1–Q4, perumusan aturan ketertelusuran, dan demonstrasi dengan data buatan. Pemilihan sumber tidak memakai protokol pencarian sistematis, penilaian risiko bias, atau meta-analisis. Karena itu, artikel merupakan **paper konseptual dan metodologis**, bukan *systematic literature review*.
 
 | Unsur artikel | Cara memperoleh | Status epistemik | Batas penggunaan |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | Persepsi dan penyajian data | Literatur primer terpilih | Temuan dari penelitian yang dirujuk | Pertahankan konteks setiap studi |
 | TISE dan Q-Cycle | Naskah pengantar penulis | Definisi kerangka | Tidak dianggap sebagai teori yang telah tervalidasi universal |
 | Matriks pemilihan representasi | Sintesis dalam artikel ini | Usulan konseptual | Perlu penyesuaian disiplin dan pengujian pengguna |
@@ -57,7 +71,7 @@ Setiap bentuk penyajian memberi akses pada jenis informasi yang berbeda. Diagram
 @fig-representasi menunjukkan bahwa satu pertanyaan dapat membutuhkan beberapa bentuk penyajian. Penjelasan mekanisme dapat memakai diagram, sementara evaluasinya membutuhkan plot dan tabel. Pengulangan angka di semua bentuk belum tentu bermanfaat; penulis perlu memberi tugas yang berbeda kepada setiap representasi. Ringkasan numerik di tabel dapat melengkapi pola yang terlihat pada plot tanpa menyalin seluruh data ke teks.
 
 | Pertanyaan pembaca | Representasi yang diutamakan | Informasi yang harus ada | Yang belum dibuktikan oleh bentuk itu |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | Mengapa penelitian diperlukan? | Teks dan tabel kesenjangan | Konteks, sumber, kebutuhan, batas | Kebaruan tidak cukup dibuktikan oleh tabel fitur |
 | Bagaimana mekanisme bekerja? | Diagram fungsi atau keadaan | Input, output, relasi, kondisi transisi | Panah belum membuktikan kausalitas |
 | Siapa atau apa melaksanakan fungsi? | Diagram arsitektur dan matriks alokasi | Komponen, peran, antarmuka, kewenangan | Arsitektur belum membuktikan implementasi |
@@ -74,7 +88,7 @@ Tabel unggul ketika pembaca perlu mencari nilai atau membandingkan atribut secar
 Bahasa visual dapat dianalisis melalui kosakata, sintaks, semantik, dan konteks penggunaan. Analogi dengan bahasa verbal ini bersifat operasional; tidak berarti semua foto memiliki grammar formal seperti bahasa pemrograman. Konvensi visual sebagian eksplisit, sebagian dipelajari dalam komunitas disiplin tertentu.
 
 | Lapisan | Dalam diagram | Dalam plot | Dalam tabel |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | Kosakata | Kotak, panah, simbol, batas | Titik, garis, pita, sumbu | Baris, kolom, sel, catatan |
 | Sintaks / grammar | Aturan sambungan dan arah | Pemetaan variabel ke posisi atau warna | Objek pada baris, atribut pada kolom |
 | Semantik | Aliran data, urutan, kendali | Besaran, variasi, estimasi | Arti nilai pada perpotongan objek–atribut |
@@ -89,7 +103,7 @@ Kesalahan pada lapisan berbeda menghasilkan masalah berbeda. Salah arah panah ad
 Bahasa untuk menghasilkan visual berbeda dari bahasa visual yang dibaca manusia. Mermaid mendeskripsikan diagram dengan sintaks teks; Graphviz memakai DOT untuk mendeskripsikan graf; Matplotlib merupakan pustaka Python untuk membuat figur melalui program. Quarto mendukung diagram Mermaid dan Graphviz di dalam dokumen [@mermaid2026; @graphviz2026; @quarto2026].
 
 | Perangkat | Masukan utama | Tingkat pengaturan | Cocok untuk | Pemeriksaan ilmiah tetap diperlukan |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | Mermaid | Entitas, relasi, urutan | Struktur diagram dan gaya | Alur proses, keadaan, urutan interaksi | Arti panah dan kelengkapan kondisi |
 | Graphviz / DOT | Simpul, sisi, atribut | Graf dan kendali tata letak | Dependensi, arsitektur, jaringan | Batas sistem dan tipe hubungan |
 | Matplotlib / Python | Data dan instruksi plot | Sumbu, markah, panel, anotasi | Grafik statistik dan figur ilmiah | Satuan, estimasi, skala, ketidakpastian |
@@ -110,7 +124,7 @@ TISE adalah **Triune-Intelligence Smart Engineering**, pendekatan untuk merekaya
 Dalam penulisan akademik, peran manusia mencakup menentukan pertanyaan, menilai bukti, dan mempertanggungjawabkan kesimpulan. Peran kolektif mencakup konvensi disiplin, kritik sejawat, negosiasi makna, dan pemeriksaan lintas keahlian. AI dapat membantu menyusun kode, menemukan inkonsistensi, atau mengusulkan representasi. Pemetaan tersebut merupakan **penerapan konseptual dalam artikel ini**, bukan pernyataan bahwa semua praktik publikasi sudah menjalankan TISE.
 
 | Sumber kecerdasan | Fungsi dalam TISE | Penerapan pada tulisan akademik | Pemeriksaan yang diperlukan |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | Manusia / alamiah | Tujuan, pertimbangan, tanggung jawab | Merumuskan klaim dan menilai makna visual | Apakah interpretasi sesuai bukti? |
 | Kolektif / kultural | Pengetahuan tersebar, norma, legitimasi | Menentukan istilah dan mengkritik argumen | Apakah pembaca lain memahami relasinya? |
 | Artifisial | Analitik, prediksi, simulasi, rekomendasi | Membantu kode, tata letak, dan pemeriksaan | Apakah data, referensi, dan kode telah diverifikasi? |
@@ -126,7 +140,7 @@ Pengantar TISE memetakan sumber daya, misi, keluaran, dan nilai sebagai **RMOV**
 Dalam konteks tulisan, penulis menyediakan pengetahuan dan bukti, pembaca memakai hasilnya, proses editorial mengoordinasikan penyajian dan evaluasi, dan tata kelola akademik menjaga integritas. Satu pihak dapat menjalankan beberapa peran. Analogi tersebut membantu mengajukan pertanyaan: siapa yang memerlukan tabel ini, keputusan apa yang dibantu diagram ini, dan siapa yang memverifikasi asal datanya?
 
 | Konsep TISE | Implikasi bagi representasi akademik | Artefak yang dapat memperjelasnya |
-|---|---|---|
+|:---|:---|:---|
 | RMOV | Bedakan sumber, proses, hasil, dan manfaat | Diagram transformasi dan tabel indikator |
 | USER–SOURCE–OPERATOR–REGULATOR | Tunjukkan pemakai, penyedia, pelaksana, pengawas | Diagram peran dan matriks tanggung jawab |
 | PSKVE | Laporkan pertukaran dan dampak lintas dimensi | Tabel manfaat, biaya, pengetahuan, lingkungan |
@@ -149,14 +163,19 @@ TISE memakai **Q-Cycle** untuk merumuskan, merancang, membangun, dan merancang u
 
 ## Empat ruang pertanyaan
 
-**Q1** menanyakan perubahan yang dibutuhkan, untuk siapa, dan di bawah batas apa. **Q2** menguraikan fungsi serta perilaku yang harus menghasilkan perubahan. **Q3** mengalokasikan fungsi kepada komponen, pelaku, antarmuka, dan kendali. **Q4** membangun dan mengevaluasi realisasinya. Bukti Q4 kembali kepada Q1 untuk menilai apakah kebutuhan awal terjawab atau perlu dirumuskan ulang.
+- **Q1** menanyakan perubahan yang dibutuhkan, untuk siapa, dan di bawah batas apa.
+- **Q2** menguraikan fungsi serta perilaku yang harus menghasilkan perubahan.
+- **Q3** mengalokasikan fungsi kepada komponen, pelaku, antarmuka, dan kendali.
+- **Q4** membangun dan mengevaluasi realisasinya.
+
+Bukti Q4 kembali kepada Q1 untuk menilai apakah kebutuhan awal terjawab atau perlu dirumuskan ulang.
 
 ![Q-Cycle dan jalur kembali bukti ke masalah. Warna membantu membedakan ruang pertanyaan; label tetap memuat seluruh makna. Q1 memandang solusi sebagai black box, Q2 membuka fungsi, Q3 menyusun arsitektur, dan Q4 mewujudkan serta menguji konstruksi.](figures/03-qcycle.png){#fig-qcycle fig-alt="Q1 kebutuhan menuju Q2 fungsi, Q3 arsitektur, Q4 konstruksi dan bukti, kemudian kembali melalui evaluasi ke Q1."}
 
 Warna pada @fig-qcycle merupakan pilihan presentasi: biru pucat untuk Q1, cokelat pucat untuk Q2, kuning untuk Q3, dan putih keabu-abuan untuk Q4. Istilah *black box* pada Q1 menyatakan tingkat abstraksi, sehingga tidak bergantung pada warna isi kotak. Pembaca yang melihat versi monokrom tetap dapat mengikuti label dan arah.
 
 | Ruang | Pertanyaan pokok | Isi yang perlu dilaporkan | Representasi yang membantu | Lompatan argumen yang dicegah |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | Q1 | Perubahan apa yang diperlukan? | Kebutuhan, kesenjangan, target, pemangku kepentingan | Tabel masalah–target; diagram konteks | Memilih teknologi sebelum masalah jelas |
 | Q2 | Fungsi apa menghasilkan perubahan? | Input, output, aliran, keadaan, ukuran kinerja | Diagram fungsi; tabel persyaratan | Menganggap daftar fitur sebagai mekanisme |
 | Q3 | Bagaimana fungsi dialokasikan? | Komponen, antarmuka, peran, kontrol | Diagram arsitektur; matriks alokasi | Komponen tanpa alasan fungsional |
@@ -171,7 +190,7 @@ Urutan empat ruang tidak harus identik dengan urutan bab. Artikel pendek dapat m
 Dalam penelitian rekayasa, letak kontribusi perlu dinyatakan. Kontribusi dapat berupa konstruksi baru, arsitektur yang lebih baik, mekanisme fungsional baru, atau rumusan masalah yang mengubah cara melihat kebutuhan. Sebagai heuristik pembimbingan, kedalaman konseptual umumnya meningkat dari tugas akhir menuju tesis dan disertasi. Heuristik tersebut tidak menggantikan ketentuan program studi dan tidak menyatakan bahwa setiap disertasi wajib baru pada semua Q.
 
 | Tingkat karya | Fokus kontribusi yang dapat diperiksa | Visual atau tabel yang sangat membantu | Pertanyaan audit |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | Tugas akhir | Konstruksi yang tepat, berfungsi, dan diuji | Arsitektur, dokumentasi prototipe, tabel uji | Apakah hasil menjawab kebutuhan terbatas? |
 | Tesis | Perbaikan metode atau arsitektur dengan pembanding | Diagram alternatif, plot komparatif, tabel ablation | Apa yang berubah dan mengapa lebih baik? |
 | Disertasi | Kemajuan pengetahuan konseptual atau metodologis dengan bukti memadai | Model mekanisme, arsitektur, bukti lintas kondisi | Pengetahuan baru apa yang berlaku, di bawah batas apa? |
@@ -185,7 +204,7 @@ Kebaruan diagram tidak sama dengan kebaruan penelitian. Menggambar ulang arsitek
 Tabel ketertelusuran menghubungkan kebutuhan dengan fungsi, realisasi, dan pengujian. Dalam contoh layanan kampus pada @tbl-trace, target merupakan **spesifikasi ilustratif**, bukan standar yang berasal dari pengukuran lapangan. Setiap kebutuhan memiliki identitas sehingga hubungan dapat dilacak ketika implementasi atau prosedur uji berubah.
 
 | ID / kebutuhan Q1 | Fungsi Q2 | Elemen Q3 | Bukti yang diperlukan pada Q4 | Kriteria ilustratif |
-|---|---|---|---|---|
+|:---|:---|:---|:---|:---|
 | K1: waktu tunggu terkendali | Mengestimasi permintaan dan mengalokasikan kapasitas | Estimator, penjadwal, petugas layanan | Log waktu tunggu dan distribusi per periode | Persentil ke-95 ≤15 menit |
 | K2: operasi pulih setelah gangguan | Mendeteksi deviasi dan menyesuaikan tindakan | Monitor, PUDAL, persetujuan operator | Kurva pemulihan dan log tindakan | Galat ≤5% dalam ≤15 menit |
 | K3: usaha penyedia tetap layak | Memeriksa biaya dan batas kapasitas | Modul biaya, penyedia, kebijakan subsidi | Tabel pendapatan, biaya, serta skenario | Margin tidak negatif selama skenario uji |
@@ -206,7 +225,7 @@ Tabel ini lebih kuat daripada daftar fitur karena memperlihatkan pekerjaan valid
 Demonstrasi pertama membangun dua kelompok berisi delapan nilai. Vektor awal A adalah $(-3,-2,-1,-0{,}5,0{,}5,1,2,3)$; vektor awal B berisi empat nilai $-1$ dan empat nilai $1$. Keduanya ditransformasikan dengan $x_i=50+10(u_i-\bar{u})/s_u$, dengan $s_u$ simpangan baku sampel. Dengan demikian, rerata dan simpangan baku sampel keduanya sama menurut konstruksi.
 
 | Kelompok sintetis | Jumlah nilai | Rerata | SD sampel | Struktur nilai |
-|---|---:|---:|---:|---|
+|:---|:---|:---|:---|:---|
 | A | 8 | 50,00 | 10,00 | Delapan nilai berbeda yang menyebar |
 | B | 8 | 50,00 | 10,00 | Dua nilai berbeda, masing-masing berulang empat kali |
 
@@ -221,7 +240,7 @@ Demonstrasi pertama membangun dua kelompok berisi delapan nilai. Vektor awal A a
 Demonstrasi kedua menggunakan dua belas pasangan waktu layanan buatan. Setiap baris CSV adalah kasus yang sama sebelum dan sesudah intervensi hipotetis. Selisih didefinisikan $d_i=y_{i,\mathrm{sesudah}}-y_{i,\mathrm{sebelum}}$, sehingga nilai negatif berarti waktu berkurang. Tabel melaporkan ringkasan, sedangkan plot mempertahankan pasangan individual.
 
 | Ukuran deskriptif | Nilai | Makna |
-|---|---:|---|
+|:---|:---|:---|
 | Jumlah pasangan | 12 | Dua belas kasus sintetis yang sama |
 | Rerata sebelum | 12,00 menit | Rerata waktu awal |
 | Rerata sesudah | 9,92 menit | Rerata waktu sesudah |
@@ -251,7 +270,7 @@ Satuan $e$ adalah persen dan satuan $t$ serta $\tau$ adalah menit. Parameter bas
 ![Respons galat sintetis dengan gangguan pada menit ke-20. Parameter kedua kurva ditetapkan pembuat contoh; kurva adaptif yang lebih cepat bukan hasil validasi algoritma. Garis batas 5% menghubungkan perilaku Q4 dengan target ilustratif Q1.](figures/08-pemulihan.png){#fig-pemulihan fig-alt="Kurva baseline dan adaptif melonjak ke galat 16 persen pada menit ke-20, lalu meluruh dengan konstanta waktu berbeda. Kurva adaptif lebih cepat melintasi batas galat 5 persen."}
 
 | Model ilustratif | Konstanta waktu | Menit pertama memenuhi batas setelah gangguan | Durasi pemulihan | Target durasi ≤15 menit |
-|---|---:|---:|---:|---|
+|:---|:---|:---|:---|:---|
 | Baseline | 18 menit | Menit ke-48 | 28 menit | Tidak terpenuhi dalam contoh |
 | Adaptif | 6 menit | Menit ke-30 | 10 menit | Terpenuhi dalam contoh |
 
@@ -268,7 +287,7 @@ Dalam riset TISE, penilaian tidak berhenti pada pemulihan cepat. Tindakan yang m
 Rougier dan kolega menekankan penentuan pembaca serta pesan, penyesuaian terhadap medium, penggunaan caption, dan penghindaran penyajian yang menyesatkan [@rougier2014]. Artikel ini menerjemahkan perhatian tersebut menjadi pertanyaan audit pada @tbl-audit. Pertanyaan ini merupakan sintesis praktis, bukan instrumen psikometrik yang telah divalidasi.
 
 | Dimensi | Pertanyaan audit | Tindakan perbaikan konkret |
-|---|---|---|
+|:---|:---|:---|
 | Relevansi | Klaim mana dibantu representasi ini? | Tulis satu kalimat fungsi; hapus representasi tanpa tugas |
 | Kosakata | Apakah simbol dan istilah terdefinisi? | Tambahkan label atau legenda singkat |
 | Relasi | Apakah arah dan jenis hubungan jelas? | Bedakan data, tindakan, kewenangan, dan urutan |
@@ -290,7 +309,14 @@ Tabel perlu menjaga konsistensi pembulatan, unit, dan penyebut. “Akurasi 95%�
 
 Caption perlu memuat objek, kondisi, definisi markah, dan catatan interpretasi yang diperlukan untuk membaca figur. Untuk plot eksperimen, informasi penting sering mencakup jumlah pengamatan, unit analisis, serta arti error bar. Untuk foto, informasi dapat mencakup konfigurasi, skala, dan proses pengolahan citra yang relevan. Caption tidak perlu mengulang seluruh metode, tetapi harus menunjuk pada bagian metode yang menjelaskannya.
 
-Teks di sekitar representasi memiliki tugas interpretasi. Pola penulisan yang dapat dipakai adalah: **apa yang diperlihatkan → apa yang berarti → klaim mana yang didukung → batasnya**. Pada demonstrasi pasangan, misalnya, rerata pengurangan waktu disertai satu kasus memburuk; kesimpulan deskriptifnya adalah adanya variasi perubahan, sedangkan kesimpulan kausal belum tersedia. Menulis “hasil terlihat pada Gambar X” saja belum menjelaskan implikasi ilmiahnya.
+Teks di sekitar representasi memiliki tugas interpretasi. Pola penulisan yang dapat dipakai adalah:
+
+1. **Apa yang diperlihatkan**
+2. **Apa artinya**
+3. **Klaim mana yang didukung**
+4. **Apa batasnya**
+
+Pada demonstrasi pasangan, misalnya, rerata pengurangan waktu disertai satu kasus memburuk; kesimpulan deskriptifnya adalah adanya variasi perubahan, sedangkan kesimpulan kausal belum tersedia. Menulis “hasil terlihat pada Gambar X” saja belum menjelaskan implikasi ilmiahnya.
 
 Foto prototipe memerlukan perhatian tersendiri. Penyuntingan pencahayaan untuk keterbacaan perlu dibedakan dari perubahan yang memengaruhi interpretasi bukti. Gambar buatan dapat membantu menjelaskan konsep, tetapi harus diberi label ilustrasi dan tidak disajikan sebagai dokumentasi eksperimen yang benar-benar dilakukan. Paket artikel ini memakai diagram serta plot komputasional dan tidak mengklaim memiliki foto pengujian lapangan.
 
@@ -301,7 +327,7 @@ Foto prototipe memerlukan perhatian tersendiri. Penyuntingan pencahayaan untuk k
 Quarto memungkinkan naskah Markdown, metadata YAML, sitasi, tabel, dan rujukan silang berada dalam satu proyek. Dukungan diagram memudahkan penyimpanan struktur bersama dokumen [@quarto2026]. Dalam paket artikel ini, figur telah disertakan sebagai PNG untuk pemakaian lintas format dan sebagai SVG untuk penyuntingan atau ekspor vektor. Skrip Python membentuk kembali seluruh figur dan data sintetis.
 
 | Berkas / direktori | Fungsi | Hubungan reproduksibilitas |
-|---|---|---|
+|:---|:---|:---|
 | `paper.qmd` | Sumber utama artikel | Menampung klaim, caption, sitasi, dan rujukan silang |
 | `_quarto.yml` | Konfigurasi HTML dan PDF | Mengatur bahasa, penomoran, dan tampilan |
 | `references.bib` | Metadata rujukan | Menghubungkan sitasi ke sumber yang dinyatakan |
@@ -367,13 +393,25 @@ Kode asli di `generate_figures.py` mencakup tata letak, panel tambahan, dan defi
 
 Sandve dan kolega menekankan pelacakan prosedur, data, serta lingkungan komputasi sebagai bagian dari penelitian yang dapat dibuat ulang [@sandve2013]. Penerapannya pada representasi ialah menjaga hubungan data sumber dengan transformasi, tabel ringkasan, dan figur akhir. Simpan parameter model serta versi dependensi; periksa apakah pembulatan tabel konsisten dengan data tanpa membulatkan data sumber terlalu dini.
 
-Pemeriksaan dilakukan pada tiga tingkat. **Struktural:** semua label, file, dan sitasi tersedia. **Numerik:** tabel, persamaan, dan plot mengacu pada nilai yang sama. **Visual:** teks tidak terpotong, relasi dapat dibaca, dan tampilan tetap jelas pada ukuran akhir. Memeriksa kode tanpa melihat keluaran tidak cukup, karena tata letak yang sah dapat tetap sulit dibaca.
+Pemeriksaan dilakukan pada tiga tingkat:
+
+- **Struktural:** semua label, file, dan sitasi tersedia.
+- **Numerik:** tabel, persamaan, dan plot mengacu pada nilai yang sama.
+- **Visual:** teks tidak terpotong, relasi dapat dibaca, dan tampilan tetap jelas pada ukuran akhir.
+
+Memeriksa kode tanpa melihat keluaran tidak cukup, karena tata letak yang sah dapat tetap sulit dibaca.
 
 # Diskusi
 
 ## Representasi sebagai infrastruktur argumen
 
-Sintesis artikel ini menghasilkan tiga proposisi. **P1:** representasi memperkuat argumen ketika dipilih menurut pertanyaan pembaca. **P2:** kombinasi diagram dan tabel ketertelusuran membuat hubungan Q1–Q4 lebih eksplisit dan lebih mudah diperiksa secara konseptual. **P3:** kode serta data sumber membuka kemungkinan reproduksi representasi dan audit transformasi. Ketiga proposisi belum diukur melalui eksperimen pembaca dalam artikel ini.
+Sintesis artikel ini menghasilkan tiga proposisi:
+
+- **P1:** Representasi memperkuat argumen ketika dipilih menurut pertanyaan pembaca.
+- **P2:** Kombinasi diagram dan tabel ketertelusuran membuat hubungan Q1–Q4 lebih eksplisit dan lebih mudah diperiksa secara konseptual.
+- **P3:** Kode serta data sumber membuka kemungkinan reproduksi representasi dan audit transformasi.
+
+Ketiga proposisi belum diukur melalui eksperimen pembaca dalam artikel ini.
 
 Peran TISE terletak pada penempatan komunikasi ilmiah dalam sistem tanggung jawab bersama. Manusia mempertanggungjawabkan klaim, kolektif mengkritik makna dan kelayakan, sementara AI dapat membantu produksi. Q-Cycle memberi jalur audit: apakah visual metode menjawab fungsi yang diturunkan dari masalah, dan apakah plot hasil menguji kriteria yang sebelumnya ditetapkan? Dengan jalur ini, pengadaan figur tidak menjadi keputusan tata letak belaka.
 
@@ -392,7 +430,7 @@ Reproduksi kode menghasilkan keluaran yang sama dari masukan yang sama. Hal itu 
 Usulan artikel dapat diuji melalui eksperimen pembaca dengan materi ilmiah yang sama dan bentuk penyajian berbeda. Kondisi teks saja dibandingkan dengan teks plus representasi yang relevan; versi representasi ambigu dapat digunakan untuk memeriksa peran label dan ketertelusuran. Panjang materi, informasi faktual, dan kesulitan tugas perlu dikendalikan agar efek tidak semata berasal dari tambahan isi.
 
 | Komponen evaluasi | Rancangan yang diusulkan | Hasil yang dinilai |
-|---|---|---|
+|:---|:---|:---|
 | Tugas mekanisme | Membaca aliran dan mengidentifikasi relasi | Ketepatan jawaban dan waktu penyelesaian |
 | Tugas bukti | Menentukan apakah klaim didukung data | Ketepatan audit, termasuk deteksi klaim berlebihan |
 | Tugas nilai | Mencari angka atau membandingkan kondisi | Ketepatan pengambilan nilai dan waktu |

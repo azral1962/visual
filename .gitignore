@@ -10,3 +10,6 @@ _freeze/
 *.out
 *.toc
 .DS_Store
+
+/.quarto/
+**/*.quarto_ipynb
